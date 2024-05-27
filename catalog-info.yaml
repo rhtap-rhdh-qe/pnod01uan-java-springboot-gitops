@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pnod01uan-java-springboot-gitops
+  description: This is GitOps manifest for pnod01uan-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: pnod01uan-java-springboot
+    janus-idp.io/tekton: pnod01uan-java-springboot 
+    backstage.io/kubernetes-id: pnod01uan-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pnod01uan-java-springboot
